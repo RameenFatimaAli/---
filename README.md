@@ -43,7 +43,7 @@ A backend system to handle user registration and login securely. Key features:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/RameenFatimaAli/---
+    [git clone https://github.com/RameenFatimaAli/---](https://github.com/RameenFatimaAli/---.git)
     ```
 2. Navigate to the project directory:
     ```bash
