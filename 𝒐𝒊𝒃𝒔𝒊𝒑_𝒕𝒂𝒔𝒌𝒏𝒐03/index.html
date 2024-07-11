@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple To-Do App</title>
+<style>
+  body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+  .container { max-width: 700px; margin: auto; }
+  .task-input, .task-list { background-color: #fff; padding: 20px; margin-bottom: 20px; }
+  .task-list { border: 1px solid #ddd; }
+  .task { display: flex; justify-content: space-between; margin-bottom: 10px; }
+  .task p { margin: 0; }
+  .task button { margin-left: 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="task-input">
+    <input type="text" id="title" placeholder="Title" />
+    <input type="text" id="description" placeholder="Short description" />
+    <button onclick="addTask()">Add Task</button>
+  </div>
+  <h3>Pending Tasks</h3>
+  <div class="task-list" id="pendingTasks"></div>
+  <h3>Completed Tasks</h3>
+  <div class="task-list" id="completedTasks"></div>
+</div>
+
+<script>
+let tasks = [];
+
+function addTask() {
+  const title = document.getElementById('title').value.trim();
+  const description = document.getElementById('description').value.trim();
+  const timestamp = new Date().toLocaleString();
+  if (title) {
+    tasks.push({ title, description, completed: false, addedAt: timestamp });
+    document.getElementById('title').value = '';
+    document.getElementById('description').value = '';
+    renderTasks();
+  }
+}
+
+function renderTasks() {
+  const pendingTasksEl = document.getElementById('pendingTasks');
+  const completedTasksEl = document.getElementById('completedTasks');
+  pendingTasksEl.innerHTML = '';
+  completedTasksEl.innerHTML = '';
+  tasks.forEach((task, index) => {
+    const taskEl = document.createElement('div');
+    taskEl.className = 'task';
+    taskEl.innerHTML = `
+      <p>${task.title} - ${task.description} (Added: ${task.addedAt})</p>
+      <button onclick="editTask(${index})">Edit</button>
+      <button onclick="deleteTask(${index})">Delete</button>
+      ${task.completed ? '' : '<button onclick="completeTask(${index})">Complete</button>'}
+    `;
+    if (task.completed) {
+      completedTasksEl.appendChild(taskEl);
+    } else {
+      pendingTasksEl.appendChild(taskEl);
+    }
+  });
+}
+
+function completeTask(index) {
+  tasks[index].completed = true;
+  tasks[index].completedAt = new Date().toLocaleString();
+  renderTasks();
+}
+
+function deleteTask(index) {
+  tasks.splice(index, 1);
+  renderTasks();
+}
+
+function editTask(index) {
+  const newTitle = prompt('Edit Title', tasks[index].title);
+  const newDescription = prompt('Edit Description', tasks[index].description);
+  if (newTitle != null) {
+    tasks[index].title = newTitle;
+  }
+  if (newDescription != null) {
+    tasks[index].description = newDescription;
+  }
+  renderTasks();
+}
+</script>
+</body>
+</html>
