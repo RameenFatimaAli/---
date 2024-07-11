@@ -43,11 +43,11 @@ A backend system to handle user registration and login securely. Key features:
 
 1. Clone the repository:
     ```bash
-    [git clone https://github.com/RameenFatimaAli/---](https://github.com/RameenFatimaAli/---.git)
+    git clone https://github.com/RameenFatimaAli/OIBSIP.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd repository-name
+    cd OIBSIP
     ```
 3. Open the `index.html` file in your preferred web browser for frontend projects.
 4. For the backend login authentication system, follow the setup instructions for MEAN-MongoDB, Express.js, Angular, Node.js.
