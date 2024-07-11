@@ -9,11 +9,15 @@ An interactive calculator that performs basic functions such as addition, subtra
 - A display screen for user input and results.
 - Grid system in CSS for button alignment.
 - JavaScript eventListeners, if-else statements, operators, and loops for functionality.
+  
+    ![Interface Screenshot](Images/Screenshot 2024-07-11 183834.png)
 
 ### 2. Tribute Page
 A responsive tribute page dedicated to Steve Jobs. It includes:
 - Basic HTML and CSS for layout and design.
 - Responsive design principles for mobile and desktop views.
+  
+  ![Interface Screenshot](Images/Screenshot_11-7-2024_183530_127.0.0.1.jpeg)
 
 ### 3. To-Do Web App
 A web application for managing daily tasks. Features include:
@@ -22,6 +26,8 @@ A web application for managing daily tasks. Features include:
 - Separate lists for pending and completed tasks.
 - Editing and deleting tasks.
 - Displaying the date and time for task creation and completion.
+ 
+  ![Interface Screenshot](Images/Screenshot 2024-07-11 183328.png)
 
 ### 4. Backend Login Authentication System
 A backend system to handle user registration and login securely. Key features:
@@ -31,7 +37,7 @@ A backend system to handle user registration and login securely. Key features:
 - Page protection for authenticated users.
 - Proper error handling for incorrect login credentials and already registered users.
 
-  ![Interface Screenshot](Images/Screenshot_11-7-2024_183530_127.0.0.1.jpeg)
+ ![Interface Screenshot](Images/Screenshot 2024-07-11 182640.png)
 
 ## Installation
 
